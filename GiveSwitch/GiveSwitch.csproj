@@ -5,8 +5,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Home\Data\" />
+    <Folder Include="Areas\Home\Models\" />
+    <Folder Include="Areas\Products\Data\" />
+    <Folder Include="Areas\Products\Models\" />
+    <Folder Include="Areas\Users\Data\" />
+    <Folder Include="Areas\Users\Interfaces\" />
+    <Folder Include="Areas\Users\Models\" />
+    <Folder Include="wwwroot\template_content\bootstrap_classified_theme\dist\images\events\bg\" />
+    <Folder Include="wwwroot\template_content\bootstrap_classified_theme\dist\images\untitled folder\" />
+    <Folder Include="wwwroot\template_content\bootstrap_classified_theme\rtl\images\events\bg\" />
+    <Folder Include="wwwroot\template_content\bootstrap_classified_theme\rtl\images\untitled folder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GiveSwitch.Data\GiveSwitch.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Home\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Products\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Users\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>
