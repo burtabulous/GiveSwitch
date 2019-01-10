@@ -24,7 +24,7 @@ namespace GiveSwitch.Data.Providers
 
             using (var connection = new SqlConnection(connectionString))
             {
-                users = connection.Query<User>("select Id, FirstName, LastName from Users");
+                users = connection.Query<User>("select [UserId], [FirstName], [LastName], [UserHandle], [Email], [Phone] from Users");
             }
 
             return users;
@@ -36,7 +36,7 @@ namespace GiveSwitch.Data.Providers
 
             using (var connection = new SqlConnection(connectionString))
             {
-                user = connection.Query<User>("select Id, FirstName, LastName from Users where Id=@Id", new { Id = userId }).FirstOrDefault();
+                user = connection.Query<User>("select UserId, FirstName, LastName, UserHandle, Email, Phone from Users where UserId=@Id", new { Id = userId }).FirstOrDefault();
 
 
                 //test to use string in where clause works

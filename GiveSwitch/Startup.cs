@@ -36,7 +36,7 @@ namespace GiveSwitch
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddTransient<IUserProvider>(f => new UserProvider("Persist Security Info = false; Integrated Security = true; Initial Catalog = TESTDB; server = BURTS-DELL"));
+            services.AddTransient<IUserProvider>(f => new UserProvider("Persist Security Info = false; Integrated Security = true; Initial Catalog = GS_Test; server = BURTS-DELL"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
